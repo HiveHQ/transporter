@@ -1,7 +1,7 @@
 package state
 
 import (
-	"github.com/compose/transporter/pkg/message"
+	"github.com/hivehq/transporter/pkg/message"
 )
 
 type MsgState struct {

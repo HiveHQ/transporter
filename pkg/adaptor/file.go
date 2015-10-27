@@ -8,8 +8,8 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/compose/transporter/pkg/message"
-	"github.com/compose/transporter/pkg/pipe"
+	"github.com/hivehq/transporter/pkg/message"
+	"github.com/hivehq/transporter/pkg/pipe"
 )
 
 // File is an adaptor that can be used as a

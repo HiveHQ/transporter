@@ -7,8 +7,8 @@ import (
 	"time"
 
 	"github.com/compose/mejson"
-	"github.com/compose/transporter/pkg/message"
-	"github.com/compose/transporter/pkg/pipe"
+	"github.com/hivehq/transporter/pkg/message"
+	"github.com/hivehq/transporter/pkg/pipe"
 	"github.com/robertkrimen/otto"
 	_ "github.com/robertkrimen/otto/underscore" // enable underscore
 )

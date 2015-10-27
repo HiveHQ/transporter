@@ -5,9 +5,9 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/compose/transporter/pkg/events"
-	"github.com/compose/transporter/pkg/state"
-	"github.com/compose/transporter/pkg/transporter"
+	"github.com/hivehq/transporter/pkg/events"
+	"github.com/hivehq/transporter/pkg/state"
+	"github.com/hivehq/transporter/pkg/transporter"
 	"github.com/nu7hatch/gouuid"
 	"github.com/robertkrimen/otto"
 )

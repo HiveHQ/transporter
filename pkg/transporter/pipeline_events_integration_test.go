@@ -11,7 +11,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/compose/transporter/pkg/adaptor"
+	"github.com/hivehq/transporter/pkg/adaptor"
 )
 
 var (

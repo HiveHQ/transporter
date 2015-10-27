@@ -4,9 +4,9 @@ import (
 	"log"
 	"time"
 
-	"github.com/compose/transporter/pkg/adaptor"
-	"github.com/compose/transporter/pkg/events"
-	"github.com/compose/transporter/pkg/state"
+	"github.com/hivehq/transporter/pkg/adaptor"
+	"github.com/hivehq/transporter/pkg/events"
+	"github.com/hivehq/transporter/pkg/state"
 )
 
 // VERSION the library

@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/compose/transporter/pkg/transporter"
+	"github.com/hivehq/transporter/pkg/transporter"
 	"github.com/mitchellh/cli"
 )
 

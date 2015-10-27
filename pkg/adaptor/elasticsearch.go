@@ -6,8 +6,8 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/compose/transporter/pkg/message"
-	"github.com/compose/transporter/pkg/pipe"
+	"github.com/hivehq/transporter/pkg/message"
+	"github.com/hivehq/transporter/pkg/pipe"
 	elastigo "github.com/mattbaird/elastigo/lib"
 )
 
