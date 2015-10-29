@@ -26,6 +26,8 @@ func (o OpType) String() string {
 		return "insert"
 	case Update:
 		return "update"
+	case PartialUpdate:
+		return "partial_update"
 	case Delete:
 		return "delete"
 	case Command:
