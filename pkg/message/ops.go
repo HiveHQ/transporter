@@ -48,6 +48,8 @@ func OpTypeFromString(s string) OpType {
 		return Insert
 	case 'u':
 		return Update
+	case 'p':
+		return PartialUpdate
 	case 'd':
 		return Delete
 	case 'c':

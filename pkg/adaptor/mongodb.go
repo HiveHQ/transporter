@@ -379,10 +379,12 @@ func (m *Mongodb) tailData() (err error) {
 		}
 
 		iter = collection.Find(query).LogReplay().Sort("$natural").Tail(m.oplogTimeout)
+		retries = 0
 	)
 
 	for {
 		for iter.Next(&result) {
+			retries = 0
 			if stop := m.pipe.Stopped; stop {
 				return
 			}
@@ -430,7 +432,11 @@ func (m *Mongodb) tailData() (err error) {
 			continue
 		}
 		if iter.Err() != nil {
-			return NewError(CRITICAL, m.path, fmt.Sprintf("Mongodb error (error reading collection %s)", iter.Err()), nil)
+			// For timeouts do not return, just retry up to 5 times
+			if strings.Contains(iter.Err(), 'timeout') == false && retries < 5{
+				retries++
+				return NewError(CRITICAL, m.path, fmt.Sprintf("Mongodb error (error reading collection %s)", iter.Err()), nil)
+			}
 		}
 
 		// query will change,
