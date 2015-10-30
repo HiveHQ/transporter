@@ -432,9 +432,9 @@ func (m *Mongodb) tailData() (err error) {
 			continue
 		}
 		if iter.Err() != nil {
-			// For timeouts do not return, just retry up to 5 times
-			if strings.Contains(iter.Err(), 'timeout') == false && retries < 5{
-				retries++
+			// Do not return, just retry up to 5 times
+			retries ++
+			if retries > 4 {
 				return NewError(CRITICAL, m.path, fmt.Sprintf("Mongodb error (error reading collection %s)", iter.Err()), nil)
 			}
 		}
