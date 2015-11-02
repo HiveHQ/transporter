@@ -162,12 +162,12 @@ func (m *Mongodb) Start() (err error) {
 	if m.debug {
 		fmt.Printf("setting start timestamp: %d\n", m.oplogTime)
 	}
-
-	err = m.catData()
-	if err != nil {
-		m.pipe.Err <- err
-		return err
-	}
+	// skip the catData and only tail, we will handle syncing of missing data ourselves
+	// err = m.catData()
+	// if err != nil {
+	// 	m.pipe.Err <- err
+	// 	return err
+	// }
 	if m.tail {
 		// replay the oplog
 		err = m.tailData()
