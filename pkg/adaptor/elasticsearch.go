@@ -120,10 +120,8 @@ func (e *Elasticsearch) applyOp(msg *message.Msg) (*message.Msg, error) {
 		e.indexer.Delete(e.index, _type, id, false)
 		err = nil
 	case message.PartialUpdate:
-		fmt.Printf("partial update: %+v\n", msg)
 		err = e.indexer.UpdateWithPartialDoc(e.index, _type, id, "", "", nil, msg.Data, false, false)
 	default:
-		fmt.Printf("index : %+v\n", msg)
 		err = e.indexer.Index(e.index, _type, id, "", "", nil, msg.Data, false)
 	}
 	if err != nil {

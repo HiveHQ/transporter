@@ -11,8 +11,8 @@ type OpType int
 // messages refer to specific types database operations which are enumerated here.
 const (
 	Insert OpType = iota
-	Update
 	PartialUpdate
+	Update
 	Delete
 	Command
 	Noop
