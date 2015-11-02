@@ -121,6 +121,8 @@ func (e *Elasticsearch) applyOp(msg *message.Msg) (*message.Msg, error) {
 		err = nil
 	case message.PartialUpdate:
 		err = e.indexer.UpdateWithPartialDoc(e.index, _type, id, "", "", nil, msg.Data, false, false)
+	case message.Update:
+		err = e.indexer.UpdateWithPartialDoc(e.index, _type, id, "", "", nil, msg.Data, false, true)
 	default:
 		err = e.indexer.Index(e.index, _type, id, "", "", nil, msg.Data, false)
 	}
